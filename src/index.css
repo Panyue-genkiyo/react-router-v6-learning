@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-nav{
+.primary-nav{
   background: aliceblue;
   padding: 1rem 2rem;
 }
