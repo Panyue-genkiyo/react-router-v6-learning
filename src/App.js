@@ -8,6 +8,9 @@ import NoMatch from "./components/NoMatch";
 import Products from "./components/Products";
 import FeatureProducts from "./components/FeatureProducts";
 import NewProducts from "./components/NewProducts";
+import Users from "./components/Users";
+import UserDetail from "./components/UserDetail";
+import Admin from "./components/Admin";
 
 //app组件主要配置路由
 const App = () => {
@@ -23,6 +26,11 @@ const App = () => {
                     <Route index element={<FeatureProducts/>}/>
                     <Route path='featured' element={<FeatureProducts/>}/>
                     <Route path='new' element={<NewProducts/>}/>
+                </Route>
+                <Route path='users' element={<Users/>}>
+                    {/*动态路由，只有没有完全匹配的情况下才会尝试匹配动态路由*/}
+                    <Route path=':id' element={<UserDetail/>}/>
+                    <Route path='admin' element={<Admin/>}/>
                 </Route>
                 {/*当前面所有路由都没有匹配时会匹配path为*的路由*/}
                 <Route path='*' element={<NoMatch/>} />
