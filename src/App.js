@@ -20,6 +20,7 @@ const App = () => {
                 <Route path='order-summary' element={<OrderSummary/>}/>
                 <Route path='products' element={<Products/>} >
                     {/*//嵌套路由*/}
+                    <Route index element={<FeatureProducts/>}/>
                     <Route path='featured' element={<FeatureProducts/>}/>
                     <Route path='new' element={<NewProducts/>}/>
                 </Route>
