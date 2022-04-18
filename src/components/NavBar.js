@@ -15,11 +15,12 @@ const NavBar = () => {
     }
 
     return (
-       <nav>
+       <nav className='primary-nav'>
            {/*<Link to='/'>Home</Link>*/}
            {/*<Link to='/about'>About</Link>*/}
            <NavLink style={navLinkStyles} to='/'>Home</NavLink>
            <NavLink style={navLinkStyles} to='/about'>About</NavLink>
+           <NavLink style={navLinkStyles} to='/products'>Products</NavLink>
        </nav>
     );
 };
