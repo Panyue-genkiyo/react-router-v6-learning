@@ -11,6 +11,9 @@ import NewProducts from "./components/NewProducts";
 import Users from "./components/Users";
 import UserDetail from "./components/UserDetail";
 import Admin from "./components/Admin";
+import Profile from "./components/Profile";
+import AuthProtected from "./utils/AuthProtected";
+import Login from "./components/Login";
 const LazyAbout = React.lazy(() => import('./components/About'));
 
 //app组件主要配置路由
@@ -37,6 +40,12 @@ const App = () => {
                     <Route path=':id' element={<UserDetail/>}/>
                     <Route path='admin' element={<Admin/>}/>
                 </Route>
+                <Route path='login' element={<Login/>} />
+                <Route path='profile' element={
+                    <AuthProtected>
+                        <Profile/>
+                    </AuthProtected>
+                }/>
                 {/*当前面所有路由都没有匹配时会匹配path为*的路由*/}
                 <Route path='*' element={<NoMatch/>} />
             </Routes>
